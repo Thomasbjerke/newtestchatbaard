@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { Stack } from "@fluentui/react";
 import {
-  BroomRegular,
   DismissRegular,
   SquareRegular,
 } from "@fluentui/react-icons";
@@ -17,7 +16,7 @@ import rehypeRaw from "rehype-raw";
 import { v4 as uuidv4 } from "uuid";
 
 import styles from "./Chat.module.css";
-import Azure from "../../assets/Azure.svg";
+import ttlogotekst from "../../assets/ttlogotekst.png";
 
 import {
   ChatMessage,
@@ -268,10 +267,10 @@ const Chat = () => {
         <div className={styles.chatContainer}>
           {!lastQuestionRef.current ? (
             <Stack className={styles.chatEmptyState}>
-              <img src={Azure} className={styles.chatIcon} aria-hidden="true" />
-              <h1 className={styles.chatEmptyStateTitle}>Start chatting</h1>
+              <img src={ttlogotekst} className={styles.chatIcon} aria-hidden="true" />
+              <h1 className={styles.chatEmptyStateTitle}>Begynn å chatte</h1>
               <h2 className={styles.chatEmptyStateSubtitle}>
-                This chatbot is configured to answer your questions
+                Denne chatbotten svarer på spørsmål om trafikksikkerhet
               </h2>
             </Stack>
           ) : (
@@ -317,7 +316,7 @@ const Chat = () => {
                   <div className={styles.chatMessageGpt}>
                     <Answer
                       answer={{
-                        answer: "Generating answer...",
+                        answer: "Genererer svar...",
                         citations: [],
                       }}
                       onCitationClicked={() => null}
@@ -339,7 +338,7 @@ const Chat = () => {
                 horizontal
                 className={styles.stopGeneratingContainer}
                 role="button"
-                aria-label="Stop generating"
+                aria-label="Stopp generering"
                 tabIndex={0}
                 onClick={stopGenerating}
                 onKeyDown={(e) =>
@@ -351,30 +350,13 @@ const Chat = () => {
                   aria-hidden="true"
                 />
                 <span className={styles.stopGeneratingText} aria-hidden="true">
-                  Stop generating
+                  Stopp generering
                 </span>
               </Stack>
             )}
-            <BroomRegular
-              className={styles.clearChatBroom}
-              style={{
-                background:
-                  isLoading || answers.length === 0
-                    ? "#BDBDBD"
-                    : "radial-gradient(109.81% 107.82% at 100.1% 90.19%, #0F6CBD 33.63%, #2D87C3 70.31%, #8DDDD8 100%)",
-                cursor: isLoading || answers.length === 0 ? "" : "pointer",
-              }}
-              onClick={clearChat}
-              onKeyDown={(e) =>
-                e.key === "Enter" || e.key === " " ? clearChat() : null
-              }
-              aria-label="Clear session"
-              role="button"
-              tabIndex={0}
-            />
             <QuestionInput
               clearOnSend
-              placeholder="Type a new question..."
+              placeholder="Skriv inn et spørsmål..."
               disabled={isLoading}
               onSend={(question) => makeApiRequest(question)}
               recognizedText={recognizedText}
@@ -394,7 +376,7 @@ const Chat = () => {
               horizontalAlign="space-between"
               verticalAlign="center"
             >
-              <span className={styles.citationPanelHeader}>Citations</span>
+              <span className={styles.citationPanelHeader}>Kilder</span>
               <DismissRegular
                 className={styles.citationPanelDismiss}
                 onClick={() => setIsCitationPanelOpen(false)}
