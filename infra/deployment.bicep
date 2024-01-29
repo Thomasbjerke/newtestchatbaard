@@ -156,7 +156,7 @@ param authType string = 'keys'
 @description('Id of the user or app to assign application roles')
 param principalId string = ''
 
-var WebAppImageName = 'DOCKER|ttchatbaard.azurecr.io/rag-webapp'
+var WebAppImageName = 'DOCKER|ttchatbaard1.azurecr.io/rag-webapp'
 var AdminWebAppImageName = 'DOCKER|fruoccopublic.azurecr.io/rag-adminwebapp'
 var BackendImageName = 'DOCKER|fruoccopublic.azurecr.io/rag-backend'
 

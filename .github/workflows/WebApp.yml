@@ -15,15 +15,15 @@ jobs:
     - name: Docker Login
       uses: docker/login-action@v3.0.0
       with:
-        registry: ttchatbaard.azurecr.io
-        username: ttchatbaard
-        password: EJZNFyOtYyGDuI/p2PovBAH8l4Te320WiNw91G+Sul+ACRDvmTRV
+        registry: ttchatbaard1.azurecr.io
+        username: ttchatbaard1
+        password: XTSNEHgFsKKIIiu+K3lHiKS3H3PXP894blNMmX4+km+ACRAfmIbf
     
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run:
-        docker pull ttchatbaard.azurecr.io/rag-webapp:latest || true;
-        docker build . --file docker/WebApp.Dockerfile --cache-from ttchatbaard.azurecr.io/rag-webapp:latest --tag ttchatbaard.azurecr.io/rag-webapp:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
-        docker tag ttchatbaard.azurecr.io/rag-webapp:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER ttchatbaard.azurecr.io/rag-webapp:latest;
-        docker push ttchatbaard.azurecr.io/rag-webapp:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
-        docker push ttchatbaard.azurecr.io/rag-webapp:latest;
+        docker pull ttchatbaard1.azurecr.io/rag-webapp:latest || true;
+        docker build . --file docker/WebApp.Dockerfile --cache-from ttchatbaard1.azurecr.io/rag-webapp:latest --tag ttchatbaard1.azurecr.io/rag-webapp:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
+        docker tag ttchatbaard1.azurecr.io/rag-webapp:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER ttchatbaard1.azurecr.io/rag-webapp:latest;
+        docker push ttchatbaard1.azurecr.io/rag-webapp:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
+        docker push ttchatbaard1.azurecr.io/rag-webapp:latest;
