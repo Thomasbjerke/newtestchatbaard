@@ -101,7 +101,7 @@
     },
     "AzureSearchEnableInDomain": {
       "type": "string",
-      "defaultValue": "false",
+      "defaultValue": "true",
       "metadata": {
         "description": "Enable in domain"
       }

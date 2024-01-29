@@ -46,7 +46,7 @@ param AzureSearchIndexIsPrechunked string = 'false'
 param AzureSearchTopK string = '5'
 
 @description('Enable in domain')
-param AzureSearchEnableInDomain string = 'false'
+param AzureSearchEnableInDomain string = 'true'
 
 @description('Content columns')
 param AzureSearchContentColumns string = 'content'
